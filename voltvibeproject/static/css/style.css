@@ -27,7 +27,7 @@
 .icon {
     width: 200px;
     height: 70px;
-    background: url(Vibe.png) no-repeat center;
+    background: url(../images/Vibe.png) no-repeat center;
     background-size: contain; /* Ensures the image fits within the div */
 }
 
@@ -101,7 +101,7 @@
 }
 
 .pic{
-    background: url(pic.png) no-repeat;
+    background: url(../images/pic.png) no-repeat;
     width: 700px;
     height: 400px;
     background-size: contain;

@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <title>account</title>
+</head>
+<body>
+    <main id="main">
+        <div class="div1">
+            <h2>VOLT VIBE <br><p style="color: black; font-size: medium; font-weight: lighter; padding: 5pxpx;">The best marketplace for you</p></h2>
+        </div>
+
+        <div class="div2">
+            <div class="button">
+                <form action="{% url 'account' %}" method="post" class="form">
+                    {% csrf_token %}
+                    <input type="text" id="username" name="username" placeholder="Enter name" class="input" required> </br>
+                    <input type="email" id="email" name="email" placeholder="Enter email" class="input1" required> <br>
+                    <input type="password" id="password" name="password" placeholder="password" class="input1" required> <br>
+                    <button type="submit" style="margin-left: 100px; background-color: rgb(57, 57, 246); padding: 15px; width: 40%; border-radius: 10px; cursor: pointer; color: white;">sign up</button>
+                    <!--<input type="submit" value="Register" style="margin-left: 100px; background-color: rgb(57, 57, 246); padding: 15px; width: 40%; border-radius: 10px; cursor: pointer; color: white;">-->
+                </form>
+            </div> <hr>
+
+            <div style="display: flex; margin-top: 10px;">
+                <h4 style="margin-left: 20px; font-weight: lighter;">Already have an account <a href="{% url 'signin' %}" style="text-decoration: none; margin-left: 30px; color: blue;"> signin </a></h4>
+            </div>
+            
+        </div>
+    </main>
+ 
+</body>
+</html>

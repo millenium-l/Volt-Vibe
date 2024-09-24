@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/phone.css' %}">
+    <title>Phones</title>
+</head>
+<body>
+    <header class="main"></header>
+        <nav class="navbar">
+            <div style="color: green;">
+                <p>Thank you for opting for our services</p>
+            </div>
+            <ul class="menu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'account' %}">About</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            
+        </nav>
+        <nav class="navbar2">
+            <span class="icon"></span>
+            <div class="nav">
+                <div class="logo"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="{% url 'account' %}">My account</a></li>
+                </ul>
+            
+                <div class="logo2"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="cart.html">cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <img src="{% static 'images/v39_155.png' %}" alt="phone photo" style="height: 80vh; width: 75%; padding: 60px; margin-left: 130px; ">
+        </div>
+    </main>
+
+    <main class="main2">
+        <h3 style="margin-bottom: 10px; background-color: white; width: 30%;">Something you may like</h3>
+        <div class="image">
+            <img src="{% static 'images/v40_197.png' %}" alt="Samsung S24 Ultra">
+            <img src="{% static 'images/v40_189.png' %}" alt="Oppo 37">
+            <img src="{% static 'images/v40_188.png' %}" alt="Oppo R15x">
+            <img src="{% static 'images/v40_190.png' %}" alt="Vivo Y55">
+            <img src="{% static 'images/v40_191.png' %}" alt="Oppo Reno3 Pro">
+            <img src="{% static 'images/v40_192.png' %}" alt="Image description">
+            <img src="{% static 'images/v40_193.png' %}" alt="Image description">
+            <img src="{% static 'images/v40_194.png' %}" alt="Image description">
+        </div>
+    </main>
+
+    <main class="main3">
+        
+        <h2><img src="{% static 'images/v39_169.png' %}" alt="diamond" style="height: 40px; margin-left: 40px;"><br>Great value <p style="font-weight: lighter; font-size: small;">We offer competitive prices <br>on our 100 plus product range</p> </h2>
+        <h2><img src="{% static 'images/v39_172.png' %}" alt="diamond" style="height: 40px; margin-left: 40px;"><br>Shop with confidence <p style="font-weight: lighter; font-size: small;">Our buyer protection covers your purchase <br> from click to delivery</p> </h2>
+        <h2><img src="{% static 'images/v39_174.png' %}" alt="diamond" style="height: 40px; margin-left: 40px;"><br>24/7 Help center <p style="font-weight: lighter; font-size: small;">Round-the-clock assistance for a smooth shopping  <br>experience</p> </h2>
+        <h2><img src="{% static 'images/v39_177.png' %}" alt="diamond" style="height: 40px; margin-left: 40px;"><br>Safe payment <p style="font-weight: lighter; font-size: small;">pay with the world's most popular <br>and secure payment methods</p> </h2>
+    </main>
+</body>
+</html>

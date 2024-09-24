@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Home Page</title>
 </head>
 <body>
@@ -16,9 +18,9 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="service.html">Services</a></li>
-                <li><a href="account.html">My Profile</a></li>
+                <li><a href="{% url 'account' %}">My Profile</a></li>
             </ul>
-            <button class="cn"><a href="home.html">Shop Now</a></button>
+            <button class="cn"><a href="{% url 'home' %}">Shop Now</a></button>
         </nav>
     </header>
 
