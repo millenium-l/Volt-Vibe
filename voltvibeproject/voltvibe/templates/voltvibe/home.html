@@ -21,9 +21,9 @@
     {% endfor %}  
 
     {% if user.is_authenticated %}
-        <h3>Hello {{ username }}</h3>
+        <h3>Hello {{ user.username }}</h3>
         <h4>You've successfully logged in</h4>
-        <button type="submit"><a href="signout">Sign out</a></button>
+        <button type="submit"><a href="">logout</a></button>
     {% else %}
         <button type="submit"><a href="account">Create account</a></button>
         <button type="submit"><a href="signin">Sign in</a></button>
@@ -46,7 +46,7 @@
             <div class="nav">
                 <div class="logo"></div>
                 <ul class="menu2">
-                    <li><a href="{% url 'account' %}">My account</a></li>
+                    <li><a href="{% url 'login' %}">My account</a></li>
                 </ul>
                 <div class="logo2"></div>
                 <ul class="menu2">

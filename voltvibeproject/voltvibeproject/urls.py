@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('app/',include('voltvibe.urls')),
-    path('', include('voltvibe.urls'))
+    path('', include('voltvibe.urls')),
+    path('auth/', include('accounts.urls')),
 ]
