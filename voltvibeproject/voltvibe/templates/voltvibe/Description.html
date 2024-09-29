@@ -1,151 +1,69 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/Description.css' %}">
+    <link rel="stylesheet" href="{% static 'css/description.css' %}">
+    <title>Home</title>
 </head>
 <body>
+    <header class="main">
+        <nav class="navbar">
+            <div style="color: green;">
+                <p>Thank you for opting for our services</p> <br>
+                <h2 style="font-size: 25px;"> VOLT <span style="color: blue;"> VIBE</span> </h2>
 
-    <div class="Logo">
-            <img src="logo.png" alt="Volt Vibe Logo">
-            <h1>Volt Vibe</h1>
-    </div>
-<header>
-    <div class="Main">
-    <div class="container">
-        <a class="active" href="Description.html">DESCRIPTION</a>
-        <a href="Basket.html" id="topTabs">SHOPPING BASKET</a>
-        <a href="Login.html" id="topTabs">LOG IN</a>
-        <a href="Payment.html" id="topTabs">STORE</a>
-        <a href="Payment.html" id="topTabs">PAYMENT & PURCHASES</a>
+            </div>
+            
+        </nav>
+        <nav class="navbar2">
+            <span class="icon"></span>
+            <div class="nav">
+                <div class="logo"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="{% url 'login' %}">My account</a></li>
+                </ul>
+            
+                <div class="logo2"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="cart.html">cart</a></li>
+                </ul>
+
+                <div class="logo2"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="{% url 'home' %}">home</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="main2">
+        <img src="{% static 'images/v40_197.png' %}" alt="samsung s24 ultra">
+        <div class="samsung">
+            <h3 style="font-size: 40px; margin-bottom: 10px;"> Samsung s24 ultra </h3> 
+            
+            <p style="font-size: small;"><p>Experience the power of the Samsung S24 Ultra, featuring a stunning 6.8-inch AMOLED display, an advanced camera system with 200 MP capabilities, and lightning-fast performance with its latest processor. Perfect for photography enthusiasts and multitaskers alike, this flagship smartphone elevates your mobile experience to new heights.</p>
+
+            <button style="background-color: rgb(65, 194, 65); width: 100%; height: 50px; border-radius: 20px; margin-top: 200px;"><a href="cart.html" style="text-decoration: none; padding: 20px; color: blue;">add to cart</a></button>
         </div>
-            <a href="#" class="shop-now">Shop now</a>
-</header>
+        
+    </main> <hr>
 
-<div class="phone">
-<img src="Phone.png" alt="Samsung Galaxy S24 Ultra" height="500px" width="500px">
-<h1 class="HEAD">SAMSUNG GALAXY S24 ULTRA packed with premium features and high end Gorilla class Victus and Quad HD+Resolution</h1>
-</div>
+    <main class="main3">
+        <div>
+            <h3 style="margin-bottom: 20px;">Description</h3>
+            <span class="description">
+                <p>Introducing the Samsung S24 Ultra, a remarkable flagship smartphone designed to elevate your mobile experience. With its expansive 6.8-inch Dynamic AMOLED display, you’ll enjoy vibrant colors and deep contrasts, making every image and video truly immersive. Whether you’re streaming your favorite shows or gaming on the go, the stunning visuals will captivate your senses. </p>
 
-<div class="Words">
-    <h2>Details</h2>
-    <a>Build: Gorilla Glass Victus 2 front and back with an aluminum frame.</a>
-    <a>Dimensions: Slightly similar to the S23 Ultra, with a sleek and premium design.</a>
-    <a>Display:6.8-inch Dynamic AMOLED 2X display.</a>
-    <a>Quad HD+ resolution (3088 x 1440 pixels).120Hz adaptive refresh rate.</a>
-    <a>Peak brightness up to 2500 nits (improved from previous models for better outdoor visibility).
-        HDR10+ support for vibrant colors and deeper contrasts.</a>
-    ><button>Add to Cart</button>
-</div>
-
-<div class="Lenovo">
-    <img src="Lenovo.jpeg" alt="Lenovo X50" height="600px" width="800px">
-    <a>LENOVO X50</a>
-    <a>Bringing you the latest top notch lenovo mech phone with a wider user friendly interface.</a>
-    <a>The mech has smooth edges that ensue easy handling and flexibility.</a>
-    <a>Quad HD+ resolution (3088 x 1440 pixels).120Hz adaptive refresh rate.</a>
-    <a>It also contains a higher functioning and faster processor to help you have a good experience while interacting with the device</a>
-    <button>Add to Cart</button>
-</div>
-
-<div class="New Phone"></div>
-    <img src="images (1).jpeg" alt="Phone 1" height="400px" width="350px">
-    <a>LENOVO X50</a>
-    <a>Bringing you the latest top notch lenovo mech phone with a wider user friendly interface.</a>
-    <a>The mech has smooth edges that ensue easy handling and flexibility.</a>
-    <a>Quad HD+ resolution (3088 x 1440 pixels).120Hz adaptive refresh rate.</a>
-    <a>It also contains a higher functioning and faster processor to help you have a good experience while interacting with the device</a>
-    <button>Add to Cart</button>
-</div>
-
-<div class="New Phone 2">
-    <img src="images (2).jpeg" alt="Phone 2" height="400px" width="350px">
-    <a>LENOVO X50</a>
-    <a>Bringing you the latest top notch lenovo mech phone with a wider user friendly interface.</a>
-    <a>The mech has smooth edges that ensue easy handling and flexibility.</a>
-    <a>Quad HD+ resolution (3088 x 1440 pixels).120Hz adaptive refresh rate.</a>
-    <a>It also contains a higher functioning and faster processor to help you have a good experience while interacting with the device</a>
-    <button>Add to Cart</button>
-</div>
-
-<div class="New Phone 3"></div>
-    <img src="images (3).jpeg" alt="Phone 3" height="400px" width="350px">
-    <a>LENOVO X50</a>
-    <a>Bringing you the latest top notch lenovo mech phone with a wider user friendly interface.</a>
-    <a>The mech has smooth edges that ensue easy handling and flexibility.</a>
-    <a>Quad HD+ resolution (3088 x 1440 pixels).120Hz adaptive refresh rate.</a>
-    <a>It also contains a higher functioning and faster processor to help you have a good experience while interacting with the device</a>
-    <button>Add to Cart</button>
-</div>
-
-<div class="New Phone 4"></div>
-    <img src="images (4).jpeg" alt="Phone 4" height="400px" width="350px">
-    <a>LENOVO X50</a>
-    <a>Bringing you the latest top notch lenovo mech phone with a wider user friendly interface.</a>
-    <a>The mech has smooth edges that ensue easy handling and flexibility.</a>
-    <a>Quad HD+ resolution (3088 x 1440 pixels).120Hz adaptive refresh rate.</a>
-    <a>It also contains a higher functioning and faster processor to help you have a good experience while interacting with the device</a>
-    <button>Add to Cart</button>
-</div>
-
-<section class="product-list">
-    <div class="product-item">
-        <img src="Lenovo.jpeg" alt="Product 1">
-        <span>
-                <h2>Product 1</h2>
-            <p>Description of product 1</p>
-            <p>Price: $100</p>
-            <button>Add to Cart</button>
-        </span>
-    </div>
-
-    <div class="product-item">
-        <img src="Phone.png" alt="Product 2">
-        <h2>Product 2</h2>
-        <p>Description of product 2</p>
-        <p>Price: $200</p>
-        <button>Add to Cart</button>
-    </div>
-
-    <div class="product-item">
-        <img src="images (1).jpeg" alt="Product 3">
-        <h2>Product 3</h2>
-        <p>Description of product 3</p>
-        <p>Price: $150</p>
-        <button>Add to Cart</button>
-    </div>
-
-    <div class="product-item">
-        <img src="images (2).jpeg" alt="Product 4">
-        <h2>Product 4</h2>
-        <p>Description of product 3</p>
-        <p>Price: $150</p>
-        <button>Add to Cart</button>
-    </div>
-
-    <div class="product-item">
-        <img src="images (3).jpeg" alt="Product 5">
-        <h2>Product 5</h2>
-        <p>Description of product 3</p>
-        <p>Price: $150</p>
-        <button>Add to Cart</button>
-    </div>
-
-    <div class="product-item">
-        <img src="images (4).jpeg" alt="Product 3">
-        <h2>Product 3</h2>
-        <p>Description of product 3</p>
-        <p>Price: $150</p>
-        <button>Add to Cart</button>
-    </div>
-
-    <!-- Add more products as needed -->
-</section>
-
-</div>
+                <p> S24 Ultra boasts an impressive camera system, featuring a groundbreaking 200 MP primary sensor that captures stunning detail and clarity, even in low light. With advanced zoom capabilities and multiple lenses, including ultra-wide and telephoto options, you can easily snap professional-quality photos and videos. The AI enhancements ensure that your images are optimized for breathtaking results every time.</p>
+                
+                <p>Under the hood, the S24 Ultra is powered by the latest processor, ensuring lightning-fast performance for multitasking and demanding applications. With ample RAM and storage options, you can store all your favorite apps, photos, and videos without worry. Plus, the long-lasting battery and fast charging capabilities keep you connected throughout your day.</p>
+                
+                <p> The Samsung S24 Ultra is not just a smartphone; it’s a powerful tool for creativity and productivity, designed for those who demand the very best in technology and performance. Experience innovation like never before!</p>
+            </span>
+        </div>
+         </main>
 </body>
 </html>

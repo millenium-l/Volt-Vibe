@@ -14,4 +14,7 @@ def phone(request):
 
 def Description(request):
     return render(request, 'voltvibe/Description.html')
+
+def task_list(request):
+    return render(request, 'voltvibe/list.html')
  
