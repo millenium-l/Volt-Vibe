@@ -36,13 +36,13 @@
 .icon {
     width: 200px;
     height: 40px;
-    background: url(Vibe.png) no-repeat center;
+    background: url(../images/Vibe.png) no-repeat center;
     background-size: contain;
 }
 
 /* Logo styling */
 .logo {
-    background: url(v39_139.png) no-repeat center;
+    background: url(../images/v39_139.png)no-repeat center;
     width: 30px;
     height: 30px;
     background-size: contain;
@@ -50,7 +50,7 @@
 }
 
 .logo2 {
-    background: url(v39_142.png) no-repeat center;
+    background: url(../images/v39_142.png)no-repeat center;
     width: 30px;
     height: 30px;
     background-size: contain;

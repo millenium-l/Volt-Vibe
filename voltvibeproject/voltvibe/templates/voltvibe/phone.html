@@ -47,19 +47,21 @@
         <div class="image">
             
             <div class="product-item">
-                <img src="{% static 'images/v40_197.png' %}" alt="samsung s24 ultra">
-                <h2>Product 2</h2>
-                <p>Samsung s24 ultra</p>
-                <p>Price: $200</p>
-                <button>Add to Cart</button>
+                <a href="{% url 'description' %}" style="text-decoration: none;">
+                    <img src="{% static 'images/v40_197.png' %}" alt="samsung s24 ultra">
+                    <h2>Product 2</h2>
+                    <p>Samsung s24 ultra</p>
+                    <p>Price: $200</p>
+                </a>
             </div>
         
             <div class="product-item 1">
-                <img src="{% static 'images/v40_189.png' %}" alt="oppo 37">
-                <h2>Product 3</h2>
-                <p>Oppo 37</p>
-                <p>Price: $150</p>
-                <button>Add to Cart</button>
+                <a href="{% url 'description' %}" style="text-decoration: none;">
+                    <img src="{% static 'images/v40_189.png' %}" alt="oppo 37">
+                    <h2>Product 3</h2>
+                    <p>Oppo 37</p>
+                    <p>Price: $150</p>
+                </a>
             </div>
         
             <div class="product-item 2">
@@ -67,7 +69,6 @@
                 <h2>Oppo R15x</h2>
                 <p>Description of product 3</p>
                 <p>Price: $150</p>
-                <button>Add to Cart</button>
             </div>
         
             <div class="product-item 3">
@@ -75,7 +76,6 @@
                 <h2>Vivo Y55</h2>
                 <p>Description of product 3</p>
                 <p>Price: $150</p>
-                <button>Add to Cart</button>
             </div>
         
         </div>
