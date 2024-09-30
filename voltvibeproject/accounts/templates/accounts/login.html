@@ -15,7 +15,7 @@
 
         <div class="div2">
             <div class="button">
-                <form action="{% url 'signin' %}" method="post" class="form">
+                <form method="post" class="form">
                     {% csrf_token %}
                     <!--<input type="text" id="username" name="username" placeholder="Enter name" class="input" required>--> </br>
                     <input type="username" id="username" name="username" placeholder="Enter username" class="input1" required> <br>
@@ -23,13 +23,12 @@
                     <button type="submit" style="display: flex; background-color: rgb(57, 57, 246); padding: 10px; width: 50%; border-radius: 10px; cursor: pointer; color: white; justify-content: center; font-size: larger; font-weight: bold; margin: auto;">log in</button>
                     <!--<input type="submit" value="log in" style="margin-left: 150px; display: flex; background-color: rgb(57, 57, 246); padding: 10px; width: 50%; border-radius: 10px; cursor: pointer; color: white; margin-top: 25px; font-size: larger; font-weight: bold;">--> <br> 
                     <a href="" style="display: flex; justify-content: center; text-decoration: none; ">forgotten password?</a>
-                    <input type="submit" value="signout" name="signout">
                 </form>
             </div> <hr>
 
             <div style="display: flex; margin-top: 10px; justify-content: center;">
                 
-               <a href="{% url 'account' %}" style="text-decoration: none; display: flex; background-color: rgb(50, 238, 50); padding: 13px; border-radius: 10px; width: 40%; justify-content: center; color: white;"> Create an account </a>
+               <a href="{% url 'register' %}" style="text-decoration: none; display: flex; background-color: rgb(50, 238, 50); padding: 13px; border-radius: 10px; width: 40%; justify-content: center; color: white;"> Create an account </a>
             </div>
             
         </div>

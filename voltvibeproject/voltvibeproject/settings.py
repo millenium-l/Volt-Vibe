@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'voltvibe'
+    'voltvibe',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,12 @@ STATICFILES_DIRS =[ BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Authentication
+# after successful login
+LOGIN_REDIRECT_URL = '/'
+# after successful logout
+LOGOUT_REDIRECT_URL = '/login/'
+# when need to login
+LOGIN_URL = '/login/'

@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/description.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    <header class="main">
+        <nav class="navbar">
+            <div style="color: green;">
+                <p>Thank you for opting for our services</p> <br> <hr>
+                <h2 style="font-size: 25px;"> VOLT <span style="color: black;"> VIBE</span> </h2>
+
+            </div>
+            
+        </nav>
+        <nav class="navbar2">
+            <span class="icon"></span>
+            <div class="nav">
+                <div class="logo"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="{% url 'login' %}">My account</a></li>
+                </ul>
+            
+                <div class="logo2"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="cart.html"><img src="{% static 'images/v39_142.png' %}" alt="cart" style="width: 30%;"></a></li>
+                </ul>
+
+                <div class="logo3"></div>
+                <ul class="menu2">
+                    <li style="list-style: none;"><a href="{% url 'home' %}">home</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="main2">
+        <img src="{% static 'images/v40_197.png' %}" alt="samsung s24 ultra">
+        <div class="samsung">
+            <h3 style="font-size: 40px; margin-bottom: 10px;"> Samsung S24 Ultra </h3> 
+            
+            <p style="font-size: small;"><p>Experience the power of the Samsung S24 Ultra, featuring a stunning 6.8-inch AMOLED display, an advanced camera system with 200 MP capabilities, and lightning-fast performance with its latest processor. Perfect for photography enthusiasts and multitaskers alike, this flagship smartphone elevates your mobile experience to new heights.</p>
+
+            <button style="background-color: rgb(65, 194, 65); width: 100%; height: 50px; border-radius: 20px; margin-top: 200px;"><a href="{% url 'cart' %}" style="text-decoration: none; padding: 20px; color: blue;">add to cart</a></button>
+        </div>
+        
+    </main> <hr>
+
+    <main class="main3">
+        <div>
+            <h3">Description</h3> <hr>
+            <span class="description"> 
+                <p>Introducing the Samsung S24 Ultra, a remarkable flagship smartphone designed to elevate your mobile experience. With its expansive 6.8-inch Dynamic AMOLED display, you’ll enjoy vibrant colors and deep contrasts, making every image and video truly immersive. Whether you’re streaming your favorite shows or gaming on the go, the stunning visuals will captivate your senses. </p>
+
+                <p> S24 Ultra boasts an impressive camera system, featuring a groundbreaking 200 MP primary sensor that captures stunning detail and clarity, even in low light. With advanced zoom capabilities and multiple lenses, including ultra-wide and telephoto options, you can easily snap professional-quality photos and videos. The AI enhancements ensure that your images are optimized for breathtaking results every time.</p>
+                
+                <p>Under the hood, the S24 Ultra is powered by the latest processor, ensuring lightning-fast performance for multitasking and demanding applications. With ample RAM and storage options, you can store all your favorite apps, photos, and videos without worry. Plus, the long-lasting battery and fast charging capabilities keep you connected throughout your day.</p>
+                
+                <p> The Samsung S24 Ultra is not just a smartphone; it’s a powerful tool for creativity and productivity, designed for those who demand the very best in technology and performance. Experience innovation like never before!</p>
+            </span>
+        </div>
+         </main>
+
+         <script>
+            // Initialize the cart from localStorage if it exists, or create an empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+            // Function to add a product to the cart
+            function addToCart(productName, productPrice) {
+                const product = {
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                };
+        
+                // Check if the product is already in the cart
+                const existingProductIndex = cart.findIndex(item => item.name === productName);
+        
+                if (existingProductIndex !== -1) {
+                    // If the product already exists, increase its quantity
+                    cart[existingProductIndex].quantity++;
+                } else {
+                    // If the product doesn't exist, add it to the cart
+                    cart.push(product);
+                }
+        
+                // Save the cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+        
+                // Update the cart UI (optional)
+                alert(`${productName} has been added to the cart!`);
+            }
+        
+            // Function to remove a product from the cart
+            function removeFromCart(productName) {
+                const existingProductIndex = cart.findIndex(item => item.name === productName);
+        
+                if (existingProductIndex !== -1) {
+                    // Remove the product from the cart
+                    cart.splice(existingProductIndex, 1);
+                    // Update localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    // Update the cart UI (optional)
+                    alert(`${productName} has been removed from the cart.`);
+                } else {
+                    alert('Product not found in the cart.');
+                }
+            }
+        
+            // Example function to display the cart items in the console (for debugging purposes)
+            function displayCart() {
+                console.log(cart);
+            }
+        
+            // Attach the addToCart function to buttons dynamically
+            document.addEventListener('click', function(event) {
+                if (event.target.matches('.product-item button')) {
+                    const productItem = event.target.closest('.product-item');
+                    const productName = productItem.querySelector('h2').innerText;
+                    const productPriceText = productItem.querySelector('p:nth-of-type(2)').innerText;
+                    const productPrice = parseFloat(productPriceText.replace(/[^0-9.-]+/g, ''));
+        
+                    addToCart(productName, productPrice);
+                }
+            });
+        
+            // Optionally, you can add a function to clear the cart
+            function clearCart() {
+                cart = [];
+                localStorage.removeItem('cart');
+                alert("Cart has been cleared.");
+            }
+        </script>
+        
+        
+    
+</body>
+</html>

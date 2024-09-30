@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}"> <!-- Optional CSS file -->
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'login' %}">My Account</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="cartItemsContainer">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        
+        <div id="cartSummary">
+            <h2>Summary</h2>
+            <p id="subtotal">Subtotal: KSH 0</p>
+            <p id="shipping">Shipping: KSH 2500</p>
+            <p id="tax">Tax: KSH 500</p>
+            <p id="total">Total: KSH 0</p>
+            <button id="checkoutButton">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <script>
+        // Function to load cart items from localStorage and render them
+        function loadCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItemsContainer');
+            const subtotalElement = document.getElementById('subtotal');
+            const totalElement = document.getElementById('total');
+
+            let subtotal = 0;
+            cartItemsContainer.innerHTML = ''; // Clear previous content
+
+            cart.forEach((item, index) => {
+                // Calculate subtotal
+                subtotal += item.price * item.quantity;
+
+                // Create cart item HTML
+                const itemHtml = `
+                    <div class="cart-item">
+                        <p>${item.name}</p>
+                        <p>KSH ${item.price.toLocaleString()} x ${item.quantity}</p>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `;
+
+                // Append the item to the cart container
+                cartItemsContainer.insertAdjacentHTML('beforeend', itemHtml);
+            });
+
+            // Update the subtotal and total
+            const shipping = 2500;
+            const tax = 500;
+            const total = subtotal + shipping + tax;
+
+            subtotalElement.innerText = `Subtotal: KSH ${subtotal.toLocaleString()}`;
+            totalElement.innerHTML = `Total: <strong>KSH ${total.toLocaleString()}</strong>`;
+        }
+
+        // Function to remove an item from the cart by index
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Remove the item at the specified index
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCartItems(); // Reload the cart items after removal
+            alert('Item removed from the cart.');
+        }
+
+        // Call the function to load cart items when the page loads
+        window.onload = loadCartItems;
+    </script>
+</body>
+</html>

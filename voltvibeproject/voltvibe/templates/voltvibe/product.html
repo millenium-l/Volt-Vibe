@@ -1,0 +1,22 @@
+<!-- list_products.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Add a product</h1>
+    <div>
+        <form action="{% url 'product' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">create a product</button>
+        </form>
+    </div>
+
+</body>
+</html>
