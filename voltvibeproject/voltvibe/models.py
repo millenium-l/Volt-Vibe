@@ -76,4 +76,7 @@ class CartItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} of {self.product.name}"
+    
+class desc(models.Model):
+    pass
 
