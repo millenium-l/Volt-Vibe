@@ -46,7 +46,7 @@
             
             <p style="font-size: small;"><p>Experience the power of the Samsung S24 Ultra, featuring a stunning 6.8-inch AMOLED display, an advanced camera system with 200 MP capabilities, and lightning-fast performance with its latest processor. Perfect for photography enthusiasts and multitaskers alike, this flagship smartphone elevates your mobile experience to new heights.</p>
 
-            <button style="background-color: rgb(65, 194, 65); width: 100%; height: 50px; border-radius: 20px; margin-top: 200px;"><a href="{% url 'create' %}" style="text-decoration: none; padding: 20px; color: blue;">add to cart</a></button>
+            <button style="background-color: rgb(65, 194, 65); width: 100%; height: 50px; border-radius: 20px; margin-top: 200px;"><a href="{% url 'cart' %}" style="text-decoration: none; padding: 20px; color: blue;">add to cart</a></button>
         </div>
         
     </main> <hr>
@@ -65,5 +65,79 @@
             </span>
         </div>
          </main>
+
+         <script>
+            // Initialize the cart from localStorage if it exists, or create an empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+            // Function to add a product to the cart
+            function addToCart(productName, productPrice) {
+                const product = {
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                };
+        
+                // Check if the product is already in the cart
+                const existingProductIndex = cart.findIndex(item => item.name === productName);
+        
+                if (existingProductIndex !== -1) {
+                    // If the product already exists, increase its quantity
+                    cart[existingProductIndex].quantity++;
+                } else {
+                    // If the product doesn't exist, add it to the cart
+                    cart.push(product);
+                }
+        
+                // Save the cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+        
+                // Update the cart UI (optional)
+                alert(`${productName} has been added to the cart!`);
+            }
+        
+            // Function to remove a product from the cart
+            function removeFromCart(productName) {
+                const existingProductIndex = cart.findIndex(item => item.name === productName);
+        
+                if (existingProductIndex !== -1) {
+                    // Remove the product from the cart
+                    cart.splice(existingProductIndex, 1);
+                    // Update localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    // Update the cart UI (optional)
+                    alert(`${productName} has been removed from the cart.`);
+                } else {
+                    alert('Product not found in the cart.');
+                }
+            }
+        
+            // Example function to display the cart items in the console (for debugging purposes)
+            function displayCart() {
+                console.log(cart);
+            }
+        
+            // Attach the addToCart function to buttons dynamically
+            document.addEventListener('click', function(event) {
+                if (event.target.matches('.product-item button')) {
+                    const productItem = event.target.closest('.product-item');
+                    const productName = productItem.querySelector('h2').innerText;
+                    const productPriceText = productItem.querySelector('p:nth-of-type(2)').innerText;
+                    const productPrice = parseFloat(productPriceText.replace(/[^0-9.-]+/g, ''));
+        
+                    addToCart(productName, productPrice);
+                }
+            });
+        
+            // Optionally, you can add a function to clear the cart
+            function clearCart() {
+                cart = [];
+                localStorage.removeItem('cart');
+                alert("Cart has been cleared.");
+            }
+        </script>
+        
+        
+    
 </body>
 </html>
